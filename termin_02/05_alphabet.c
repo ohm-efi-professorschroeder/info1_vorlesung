@@ -21,18 +21,11 @@
  *****************************************************************************************/
 
 #include <stdio.h>
-#include <ctype.h>
+// TODO
 
 int main()
 {
-    char buchstabe = 0;
-
-    printf("Gib einen Buchstaben ein: ");
-    buchstabe = getchar();
-    printf("Die folgende Ausgabe ist richtig, weil das Zeichen %c ein Buchstabe ist: %d\n",
-           buchstabe,
-           isalpha(buchstabe));
-    printf("Das ist der %d. Buchstabe im Alphabet.\n", tolower(buchstabe) - 'a' + 1);
+    // TODO
 
     return 0;
 }

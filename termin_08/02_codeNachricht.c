@@ -40,6 +40,8 @@ int gibZahlEin(int min, int max);
 
 int main()
 {
+    // TODO
+    
     return 0;
 }
 

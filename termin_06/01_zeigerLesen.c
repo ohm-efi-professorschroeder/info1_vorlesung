@@ -11,18 +11,16 @@ int main()
     // Welche der durch printf ausgegebenen Werte sind gleich?
     int a = 123;
     int *b = &a;
-    printf("Aufgabenteil A: a=%d, &a=%d, b=%d, &b=%d, *b=%d\n", a, &a, b, &b, *b);
-    // Vermutung: *b == a (x)
-    //            b == &a (x)
+    //printf("Aufgabenteil A: a=%d, &a=%d, b=%d, &b=%d, *b=%d\n", a, &a, b, &b, *b);
 
     // Aufgabenteil B
     // Welchen Wert hat die Variable a beim printf?
     b++;
     a++;
-    printf("Aufgabenteil B: a=%d\n", a);
+    //printf("Aufgabenteil B: a=%d\n", a);
 
     // Aufgabenteil C
     // Welchen Wert haben b, &b und *b beim printf?
     b++;
-    printf("Aufgabenteil C: b=%d, &b=%d, *b=%d\n", b, &b, *b);
+    //printf("Aufgabenteil C: b=%d, &b=%d, *b=%d\n", b, &b, *b);
 }

@@ -35,22 +35,11 @@
 #define MAX_FAECHER 10
 
 int gibGanzeZahlEin(int min, int max);
-int gibNotenEin(double noten[][MAX_FAECHER], int anzahlStudis, int anzahlFaecher);
-void gibNotenAus(double noten[][MAX_FAECHER], int anzahlStudis, int anzahlFaecher);
 
 int main()
-{
-    double noten[MAX_STUDIS][MAX_FAECHER];
-    int anzahlStudis = 0, anzahlFaecher = 0;
-
-    printf("Wieviele Studis?");
-    anzahlStudis = gibGanzeZahlEin(1, MAX_STUDIS);
-
-    printf("Wieviele Faecher?");
-    anzahlFaecher = gibGanzeZahlEin(1, MAX_FAECHER);
-
-    gibNotenEin(noten, anzahlStudis, anzahlFaecher);
-    gibNotenAus(noten, anzahlStudis, anzahlFaecher);
+{   
+    // TODO
+    
     return 0;
 }
 
@@ -70,43 +59,4 @@ int gibGanzeZahlEin(int min, int max)
 
     return zahl;
 }
-
-double gibNoteEin()
-{
-    double note = 0.0;
-    int geleseneWerte;
-
-    do
-    {
-        geleseneWerte = scanf("%lf", &note);
-        while(getchar() != '\n') {}
-
-        if(geleseneWerte != 1 || note < 1.0 || note > 5.0)
-            printf("Fehler! Erneute Eingabe: ");
-
-    } while(geleseneWerte != 1 || note < 1.0 || note > 5.0);
-    return note;
-}
-
-int gibNotenEin(double noten[][MAX_FAECHER], int anzahlStudis, int anzahlFaecher)
-{
-    for(int i = 0; i < anzahlStudis; i++) {
-        for(int j = 0; j < anzahlFaecher; j++) {
-            printf("%d. Studi, %d. Fach: ", i+1, j+1);
-            noten[i][j] = gibNoteEin();
-        }
-    }
-}
-
-void gibNotenAus(double noten[][MAX_FAECHER], int anzahlStudis, int anzahlFaecher)
-{
-    for(int i = 0; i < anzahlStudis; i++) {
-        printf("%d. Studi: ", i+1);
-        double notenSumme = 0.0;
-        for(int j = 0; j < anzahlFaecher; j++) {
-            printf(" %.2lf ", noten[i][j]);
-            notenSumme += noten[i][j];
-        }
-        printf(" --> %.2lf\n", notenSumme / anzahlFaecher);
-    }
-}
+ 

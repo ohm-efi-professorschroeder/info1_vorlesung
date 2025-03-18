@@ -17,20 +17,10 @@
  ************************************************************************************************/
 
 #include <stdio.h>
+
 int main()
 {
-    // Achtung: Das war ein Beispiel aus den Folien, nicht die Aufgabe, die hier bearbeitet werden sollte!
-    double zahl = 42.;
-    char zeichen;
-    printf("Geben Sie eine Zahl ein: ");
-    int eingeleseWerte = scanf("%lf", &zahl);
-
-    printf("Eingelese Werte: %d\n", eingeleseWerte);
-
-    getchar();
-
-    printf("Geben Sie ein Zeichen ein: ");
-    scanf("%c", &zeichen);
-    printf("Sie haben die Zahl %lf und das Zeichen %c eingegeben.\n", zahl, zeichen);
+    // TODO
+    
     return 0;
 }

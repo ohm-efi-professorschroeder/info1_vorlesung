@@ -17,8 +17,6 @@ int main()
     printf("Zielwert: %u%u%u%u\n", bit4, bit3, bit2, bit1);
 
     // Ausgabe der Variable zahl
-    zahl0 = bit4 << 3 | bit3 << 2 | bit2 << 1 | bit1;
-    //zahl0 = (bit4 << 3) + (bit3 << 2) + (bit2 << 1) + bit1;
-    printf("zahl0 = %d\n", zahl0);
+
     return 0;
 }

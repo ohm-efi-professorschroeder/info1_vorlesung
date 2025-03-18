@@ -28,13 +28,7 @@
 
 #include <stdio.h>
 
-// Funktion tauscht Werte, auf die pos1 und pos2 zeigen
-void tausche(int* pos1, int* pos2)
-{
-    int temp = *pos1;
-    *pos1 = *pos2;
-    *pos2 = temp;
-}
+// TODO
 
 int main() 
 {
@@ -47,23 +41,7 @@ int main()
         return -1;
     }
 
-    while(getchar() != '\n');
-    printf("Wie oft soll rotiert werden? ");
-    if(scanf("%d", &n) != 1 || n < 0)
-    {
-        printf("Fehlerhafte Eingabe!\n");
-        return -1;
-    }
-    
-    printf("Vor der Rotation: %d, %d, %d, %d.\n", a, b, c, d);
-
-
-    for(int i = 1; i <= n; i += 1) {
-        tausche(&a, &b);
-        tausche(&a, &d);
-        tausche(&c, &d);
-        printf("Nach der %d. Rotation: %d, %d, %d, %d\n", i, a, b, c, d);
-    }
+    // TODO
                                                                  
     return 0;
 }

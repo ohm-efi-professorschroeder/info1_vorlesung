@@ -46,9 +46,7 @@ int main()
         zahlen[i] = gibZahlEin();
     }
 
-    //selectionsort(zahlen, anzahl);
-    //bubblesort(zahlen, anzahl);
-    insertionsort(zahlen, anzahl);
+    selectionsort(zahlen, anzahl);
 
     printf("Sortierte Zahlen:\n");
     for(int i = 0; i < anzahl; i++)

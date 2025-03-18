@@ -29,41 +29,7 @@
 
 int main()
 {
-    int raeder = 0;
-    int motorisiert = 0;
-
-    printf("Wieviele Raeder?: ");
-    scanf("%d", &raeder);
-    printf("\nmotorisiert?: ");
-    scanf("%d", motorisiert);
-
-    if(raeder == 4) {
-        if(motorisiert) {
-            printf("PKW\n");
-        }
-        else {
-            printf("ungueltig\n");
-        }
-    }
-    else if(raeder == 2) {
-        if(motorisiert) {
-            printf("Motorrad\n");
-        }
-        else {
-            printf("Fahrrad\n");
-        }
-    }
-    else if(raeder > 4 && raeder % 4 == 0)
-    {
-        printf("LKW/Bus\n");
-    }
-    else if(raeder == 0 && motorisiert == 0){
-        printf("Fussgaenger");
-    }
-    else
-    {
-        printf("ungueltig\n");
-    }
+    // TODO
 
     return 0;
 }

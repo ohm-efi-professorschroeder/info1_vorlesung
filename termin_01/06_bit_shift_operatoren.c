@@ -10,9 +10,7 @@ int main()
     int malAcht = 0;
 
     // Todo: Pruefen Sie nur mit Bitoperatoren und dem !-Operator, ob in der Variable wert ein Wert im Interval [0; 255] gespeichert ist.
-    istZwischen0und255 = !(wert >> 8); // Hier Ausdruck anstelle von 0 einfuegen.
-    // oder:
-    istZwischen0und255 = !(wert & 0xff); // bitmaske 0xff
+    istZwischen0und255 = 0; // Hier Ausdruck anstelle von 0 einfuegen.
 
     printf("Liegt die Variable wert im Intervall [0; 255]? %u\n", istZwischen0und255);
 

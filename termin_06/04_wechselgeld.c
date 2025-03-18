@@ -34,73 +34,41 @@
  **************************************************************************************************************************/
 
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-
-#define MIN_PREIS_IN_EUROS  5.15
-#define MAX_PREIS_IN_EUROS 12.95
-
-double ermittlePreis()                      // Funktion 1
-{
-    int min = MIN_PREIS_IN_EUROS * 100;
-    int max = MAX_PREIS_IN_EUROS * 100;
-    return (rand() % (max - min + 1) + min) / 100.f;
-}
-
-double wirfGeldEin(double preisInEuro)      // Funktion 2
-{
-    double bezahlterBetraginEuro = 0;
-
-    printf("Bitte mindestens %lf Euros einwerfen!\n", preisInEuro);
-    while(scanf("%lf", &bezahlterBetraginEuro) != 1 || bezahlterBetraginEuro < preisInEuro)
-    {
-        printf("Bitte mindestens %lf Euros einwerfen!\n", preisInEuro);
-        while(getchar() != '\n'){}
-    }
-
-    return bezahlterBetraginEuro;
-}
-
-int errechneWechselgeld(double restBetrag, int* zweiEuros,
-                        int* fuenfzigCent, int* zehnCent) // Funktion 3
-{
-    *zweiEuros = restBetrag / 2;
-    *fuenfzigCent = (restBetrag - (*zweiEuros * 2)) / 0.5;
-    *zehnCent = (restBetrag - (*zweiEuros * 2) - (*fuenfzigCent * 0.5)) / 0.1;
-    double tmp = (restBetrag - (*zweiEuros * 2) - (*fuenfzigCent * 0.5)) - (*zehnCent * 0.1);
-    return tmp == 0;
-}
-
-
-int main()
-{
-    int zweiEuroMuenzen, fuenzigCentMuenzen, zehnCentMuenzen, istWechselGeldKomplett;
-    double preisInEuro, bezahlterBetragInEuro, restBetragInEuro;
-
-    printf("\nTicketautomat: Achtung! Restbetraege kleiner 10 Cents koennen nicht ausbezahlt werden!\n\n");
-
-    srand(time(NULL));
-
-    // TODO: Der Preis soll in dieser Simulation zufällig ermittelt werden. Die Preisspanne ist oben als Konstanten hinterlegt.
-    preisInEuro = ermittlePreis();
-    // TODO: Das einzuwerfende Geld muss einer validen Eingabe entsprechen. Dafür muss u.a. mindestens der Preis bezahlt werden.
-    bezahlterBetragInEuro = wirfGeldEin(preisInEuro);
-    restBetragInEuro = bezahlterBetragInEuro - preisInEuro;
-
-    printf("Sie haben %.2lf Euro bezahlt. Der Restbetrag von %.2lf wird nun ausgezahlt.\n", bezahlterBetragInEuro, restBetragInEuro);
-
-    // TODO
-    // int errechneWechselgeld(double restBetrag, int* zweiEuros,
-    //                        int* fuenfzigCent, int* zehnCent)
-    istWechselGeldKomplett = errechneWechselgeld(restBetragInEuro, &zweiEuroMuenzen, &fuenzigCentMuenzen, &zehnCentMuenzen);
-
-    printf("\nIhr Wechselgeld: %2dx 2-Euro-Muenzen, %2dx 50-Cent-Muenzen, %2dx 10-Cent-Muenzen.\n", zweiEuroMuenzen, fuenzigCentMuenzen, zehnCentMuenzen);
-
-    if(!istWechselGeldKomplett)
-    {
-        printf("\nDer Betrag konnte nicht komplett ausgezahlt werden.\n");
-    }
-
-    return 0;
-}
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <time.h>
+ 
+ #define MIN_PREIS_IN_EUROS  5.15
+ #define MAX_PREIS_IN_EUROS 12.95
+ 
+ 
+ int main()
+ {
+     int zweiEuroMuenzen, fuenzigCentMuenzen, zehnCentMuenzen, istWechselGeldKomplett;
+     double preisInEuro, bezahlterBetragInEuro, restBetragInEuro;
+ 
+     printf("\nTicketautomat: Achtung! Restbetraege kleiner 10 Cents koennen nicht ausbezahlt werden!\n\n");
+ 
+     srand(time(NULL));
+ 
+     // TODO: Der Preis soll in dieser Simulation zufällig ermittelt werden. Die Preisspanne ist oben als Konstanten hinterlegt.
+     preisInEuro = ermittlePreis();
+     // TODO: Das einzuwerfende Geld muss einer validen Eingabe entsprechen. Dafür muss u.a. mindestens der Preis bezahlt werden.
+     bezahlterBetragInEuro = wirfGeldEin(preisInEuro);
+     restBetragInEuro = bezahlterBetragInEuro - preisInEuro;
+ 
+     printf("Sie haben %.2lf Euro bezahlt. Der Restbetrag von %.2lf wird nun ausgezahlt.\n", bezahlterBetragInEuro, restBetragInEuro);
+ 
+     /* TODO
+     istWechselGeldKomplett = errechneWechselgeld(// TODO: Argumente übergeben. Hier sollen u.a.die Anzahl an Münzen gesetzt werden.);
+     */
+ 
+     printf("\nIhr Wechselgeld: %2dx 2-Euro-Muenzen, %2dx 50-Cent-Muenzen, %2dx 10-Cent-Muenzen.\n", zweiEuroMuenzen, fuenzigCentMuenzen, zehnCentMuenzen);
+ 
+     if(!istWechselGeldKomplett)
+     {
+         printf("\nDer Betrag konnte nicht komplett ausgezahlt werden.\n");
+     }
+ 
+     return 0;
+ }

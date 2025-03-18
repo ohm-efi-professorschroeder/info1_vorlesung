@@ -17,20 +17,6 @@
 
 int main()
 {
-    double preis = 0.;
-    printf("Geben Sie einen Preis in Euro ein: ");
-    int eingeleseneWerte = scanf("%lf", &preis);
-
-    if (eingeleseneWerte < 1) {
-        printf("Ungueltige Eingabe!\n");
-        return -1;
-    }
-
-    getchar();
-
-    int euros = (int)preis;
-    int cents = (int)(preis * 100)-euros*100;
-    printf("Der Preis ist %d Euros und %d Cents\n", euros, cents);
-
+    // TODO
     return 0;
 }

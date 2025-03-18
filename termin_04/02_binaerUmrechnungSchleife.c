@@ -31,34 +31,7 @@
 
 int main()
 {
-    int zahl = 0;
-
-    int eingeleseneWerte = 0;
-    do {
-        printf("Gib bitte ein Zahl ein: ");
-        eingeleseneWerte = scanf("%d", &zahl);
-        while(getchar() != '\n');
-    } while(eingeleseneWerte < 1 || zahl < 0);
-
-
-    /*while(zahl != 0) {
-        printf("%d / 2 = %d, Rest: %d\n", zahl, zahl / 2, zahl % 2);
-        zahl /= 2;
-    }*/
-
-    /*
-    for(<ZÄHLER>; <BEDINGUNG>; <ZÄHLER VERÄNDERN>)
-    {
-        <ANWEISUNGEN>;
-    }
-    */
-
-    // zahl = 123 -> binär
-    for(int i = 31; i >= 0; i--)
-    {
-        printf("%d", zahl >> i & 1);
-    }
-
+    // TODO
 
     return 0;
 }

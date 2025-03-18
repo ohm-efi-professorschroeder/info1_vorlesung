@@ -66,3 +66,4 @@ add_executable(09_01-suche
         termin_09/suche/sucheTest.c
         termin_09/suche/zaehleVorkommen.c
         ${UtilSources})
+        
