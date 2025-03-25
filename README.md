@@ -13,11 +13,10 @@ Ich empfehle Ihnen, sich den Code nochmals anzuschauen und ihn nachzuvollziehen 
 können wir gerne jeweils am Anfang der Vorlesungen besprechen.
 
 Um den Code zu verwenden, klonen Sie das Repository und öffnen Sie es in einer geeigneten Entwicklungsumgebung, wie z.B.
-Jetbrains CLion oder VSCode. Sie können die einzelnen Programme manuell über die Kommandozeile kompilieren. Alternativ
-verwenden Sie Cmake in Verbindung mit der Integration in Ihrer Entwicklungsumgebung:
-- CLion (am einfachsten): Es bringt alle nötigen Tools mit. Nach Öffnen des Projekts sollten Sie die einzelnen Programme
-  über das Build-Menü auswählen und kompilieren können.
-- Vscode: Sie benötigen Cmake (falls noch nicht auf Ihrem Rechner installiert), sowie die Vscode-Erweiterung "C/C++-
-  Extension Pack". Nach Öffnen des Projekts müssen Sie ein Compiler-Kit auswählen und dann den Vscode-Befehl "Cmake:
-  Configure" ausführen. Danach sollten Sie in der Toolbar am unteren Rand die einzelnen Programme auswählen,
-  kompilieren und starten können.  
+Jetbrains CLion oder VSCode. Sie können die einzelnen Programme manuell über die Kommandozeile kompilieren.
+
+Alternativ befindet sich im Wurzelverzeichnis ein s.g. `Makefile`, welches Regeln zur Erstellung der einzelnen Programme beinhaltet. Zum Kompilieren führen Sie in der Kommandozeile den Befehl `make <Programmname>` aus, also z.B. für das Programm *04_binearZahl* aus dem ersten Termin:
+
+> make 01_04-binaerZahl
+
+Hinweis: Dies setzt die Installation des Programms **Make** voraus. Diese ist meistens beim Compiler mit dabei, falls Sie jedoch Fehlermeldungen bekommen ("Make could not be found" o.ä.), versuchen Sie, Make manuell zu installieren. 

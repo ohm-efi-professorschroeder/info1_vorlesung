@@ -11,7 +11,7 @@ CFLAGS = -Wall -g -O0
 	$(CC) $(CFLAGS) $^ -o $(BUILD_DIR)/$@
 01_03-binearUmrechnung: termin_01/03_binaerUmrechnung.c
 	$(CC) $(CFLAGS) $^ -o $(BUILD_DIR)/$@
-01_04-binearZahl: termin_01/04_binaerZahl.c
+01_04-binaerZahl: termin_01/04_binaerZahl.c
 	$(CC) $(CFLAGS) $^ -o $(BUILD_DIR)/$@
 01_05-bmi: termin_01/05_bmi.c
 	$(CC) $(CFLAGS) $^ -o $(BUILD_DIR)/$@
