@@ -15,4 +15,17 @@
 
 int main()
 {
+    int zahl = 21;
+
+    printf("%d / 2 = %d , Rest = %d\n", zahl, zahl/2, zahl % 2);
+    zahl = zahl / 2;
+
+    printf("%d / 2 = %d , Rest = %d\n", zahl, zahl/2, zahl % 2);
+    zahl = zahl / 2;
+
+    printf("%d / 2 = %d , Rest = %d\n", zahl, zahl/2, zahl % 2);
+    zahl = zahl / 2;
+
+    printf("%d / 2 = %d , Rest = %d\n", zahl, zahl/2, zahl % 2);
+    zahl = zahl / 2;
 }
