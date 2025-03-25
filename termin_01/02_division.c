@@ -7,12 +7,11 @@
 
 int main()
 {
-    int zahl1 = 1;
-    double zahl2 = 2;
+    int zahl1 = 1, zahl2 = 2;
     double erg;
 
     erg = zahl1 / zahl2;
-    //printf("%d / %d = %lf", zahl1, zahl2, erg);
+    printf("%d / %d = %lf", zahl1, zahl2, erg);
 
     return 0;
 }
