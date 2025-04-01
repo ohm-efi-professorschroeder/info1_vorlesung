@@ -12,7 +12,7 @@
 
 #define MAX_PUNKTE_TEIL_A 60
 #define MAX_PUNKTE_TEIL_B 44
-#define MAX_GESAMT_PUNKTE MAX_PUNKTE_TEIL_A + MAX_PUNKTE_TEIL_B
+#define MAX_GESAMT_PUNKTE MAX_PUNKTE_TEIL_A + MAX_PUNKTE_TEIL_B // ()
 
 int main()
 {
@@ -20,18 +20,18 @@ int main()
     double ergInProzentTeilA, ergInProzentTeilB, gesamtErgInProzent;
 
     printf("Wie viele Punkte wurden in Teil A erzielt: ");
-    scanf("%d", pktTeilA);
+    scanf("%d", &pktTeilA);
 
     printf("Wie viele Punkte wurden in Teil B erzielt: ");
-    scanf("%d", pktTeilB);
+    scanf("%d", &pktTeilB);
 
     ergInProzentTeilA = pktTeilA * 100 / MAX_PUNKTE_TEIL_A;
     ergInProzentTeilB = pktTeilB * 100 / MAX_PUNKTE_TEIL_B;
     gesamtErgInProzent = (pktTeilA + pktTeilB) * 100 / MAX_GESAMT_PUNKTE;
 
-    printf("Es wurden %d %% der moeglichen Punkte in Teil A erzielt.\n", ergInProzentTeilA); 
-    printf("Es wurden %d %% der moeglichen Punkte in Teil B erzielt.\n", ergInProzentTeilB); 
-    printf("Es wurden %d %% der moeglichen Punkte insgesamt erzielt.\n", gesamtErgInProzent);
+    printf("Es wurden %lf %% der moeglichen Punkte in Teil A erzielt.\n", ergInProzentTeilA); 
+    printf("Es wurden %lf %% der moeglichen Punkte in Teil B erzielt.\n", ergInProzentTeilB); 
+    printf("Es wurden %lf %% der moeglichen Punkte insgesamt erzielt.\n", gesamtErgInProzent);
 
     return 0;
 }

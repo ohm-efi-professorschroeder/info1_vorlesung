@@ -4,10 +4,21 @@
 ****************************************************************************************************************************************/
 
 #include <stdio.h>
-// TODO
+
+#define PI 3.1415
 
 int main()
 {
-    // TODO
+    // 1. Eingabe (Winkel Grad)
+    int winkel = 0;
+    printf("Bitte Winkel in Grad eingeben: ");
+    scanf("%d", &winkel);
+
+    // 2. Winkel * PI / 180;
+    float rad = winkel * PI / 180;
+
+    // 3. Ausgabe Winkel rad
+    printf("Der Winkel in Radians ist: %.3f\n", rad);
+
     return 0;
 }
