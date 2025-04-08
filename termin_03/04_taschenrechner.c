@@ -36,7 +36,39 @@
 
 int main()
 {
-    // TODO
-    
+    int zahl1;
+    int zahl2;
+    char operator;
+
+    printf("Erste Zahl:");
+    scanf("%d", &zahl1);
+    printf("Zweite Zahl:");
+    scanf("%d", &zahl2);
+    printf("Operator (+,-,*,/):");
+    scanf("%c", &operator);
+
+    float ergebnis = 0.0;
+    switch(operator)
+    {
+        case '+':
+            ergebnis = zahl1 + zahl2;
+            break;            
+        case '-':
+            ergebnis = zahl1 - zahl2;
+            break;
+        case '*':
+            ergebnis = zahl1 * zahl2;
+            break;
+        case '/':
+            if(zahl2 != 0)
+                ergebnis = zahl1 / zahl2;
+            else
+                printf("Divison durch Null!\n");
+        default:
+            printf("Ungueltiger Operator!\n");
+
+    }
+    printf("Ergebnis: %f\n", ergebnis);
+
     return 0;
 }

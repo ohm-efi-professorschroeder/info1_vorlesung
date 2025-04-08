@@ -17,6 +17,19 @@
 
 int main()
 {
-    // TODO
+    float preis = 0.;
+    printf("Geben Sie einen Preis in Euro ein: ");
+
+    if(scanf("%f", &preis) != 1 || preis < 0.0)
+    {
+        printf("Fehlerhafte Eingabe!\n");
+        return -1;
+    }
+
+    int euro = (int) preis;
+    int cent = (preis - euro) * 100 + 0.5; 
+    
+    printf("Der Preis ist %d Euros und %d Cents!\n", euro, cent);
+
     return 0;
 }

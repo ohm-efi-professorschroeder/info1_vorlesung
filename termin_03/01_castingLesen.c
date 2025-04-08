@@ -22,11 +22,17 @@ int main()
     printf("Geben Sie die benoetigte Zeit in Sekunden ein: ");
     scanf("%f", &zeit);
 
-    geschwindigkeit = sqrt((punkt1x - punkt2x) * (punkt1x - punkt2x) + (punkt1y - punkt2y) * (punkt1y - punkt2y)) / zeit;
+    geschwindigkeit = sqrt(
+        (punkt1x - punkt2x) * (punkt1x - punkt2x) + (punkt1y - punkt2y) * (punkt1y - punkt2y)
+    //   ^ int - unsigned -> unsigned - unsigned
+    // Ergebnis: unsigned int
+    ) / zeit;
+    // unsigned int / float -> float
 
     printf("Um von der Koordinate (%d, %d) nach Koordinate (%d, %d) in %.2f Sekunden zu kommen,"
            " wird eine Geschwindigkeit von %.2f m/s benoetigt.\n",
            punkt1x, punkt1y, (int)punkt2x, (int)punkt2y, zeit, geschwindigkeit);
+           //                   ^ explizit unsigned -> signed int
 
     return 0;
 }
