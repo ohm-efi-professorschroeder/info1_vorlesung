@@ -24,7 +24,25 @@
 
 int main()
 {
-    // TODO
-    
+    float zahl = 5.5;
+    printf("Geben Sie eine Zahl ein: ");
+    while(scanf("%f", &zahl) != 1 || zahl < 0)
+    {
+        while(getchar() != '\n');
+        printf("Fehlerhafte Eingabe!\n");
+        printf("Geben Sie eine Zahl ein: ");
+    }
+
+    float a = zahl / 2;
+    float b = zahl / a;
+
+    while((a-b)*(a-b) >= 10e-9)
+    {
+        a = (a+b) / 2;
+        b = zahl / a;
+    }
+
+    printf("%f * %f = %f\n", a, b, zahl);
+
     return 0;
 }

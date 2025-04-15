@@ -25,7 +25,20 @@
 
 int main()
 {
-    // TODO
-    
+    char a,b;
+
+    //scanf("%c", &a);
+    //scanf("%c", &a);
+    printf("Geben Sie ein Zeichen ein: ");
+    a = getchar(); getchar();
+    printf("Geben Sie noch ein Zeichen ein: ");
+    b = getchar(); getchar();
+
+    for( ;a != b; a = (a + 1) % 127)
+    {
+        if(iscntrl(a) == 0)
+            printf("%c", a);
+    }
+
     return 0;
 }

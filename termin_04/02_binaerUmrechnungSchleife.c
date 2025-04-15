@@ -31,7 +31,21 @@
 
 int main()
 {
-    // TODO
+    int zahl = 0;
+    printf("Geben Sie eine Zahl ein: ");
+
+    while(scanf("%d", &zahl) != 1 || zahl < 0)
+    {
+        while(getchar() != '\n');
+        printf("Fehlerhafte Eingabe!\n");
+        printf("Geben Sie eine Zahl ein: ");
+    }
+    
+    while(zahl > 0)
+    {
+        printf("%d / 2 = %d , Rest = %d\n", zahl, zahl/2, zahl % 2);
+        zahl = zahl / 2;
+    }
 
     return 0;
 }
