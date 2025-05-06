@@ -28,7 +28,12 @@
 
 #include <stdio.h>
 
-// TODO
+void tausche(int *zeiger1, int *zeiger2)
+{
+    int zahl1 = *zeiger1;
+    *zeiger1 = *zeiger2;
+    *zeiger2 = zahl1;
+}
 
 int main() 
 {
@@ -40,8 +45,20 @@ int main()
         printf("Fehlerhafte Eingabe!\n");
         return -1;
     }
+    printf("Wie oft soll rotiert werden?");
+    if (scanf("%d", &n) != 1)
+    {
+        printf("Fehlerhafte Eingabe!\n");
+        return -1;
+    }
 
-    // TODO
+    for(int i = 0; i < n; i++)
+    {
+        tausche(&a, &b);
+        tausche(&a, &c);
+        tausche(&a, &d);
+        printf("Nach der %d. Rotation: %d, %d, %d, %d\n", i+1, a, b, c, d);
+    }
                                                                  
     return 0;
 }
