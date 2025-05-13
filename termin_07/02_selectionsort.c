@@ -30,13 +30,63 @@
  *                                                               *
  *****************************************************************/
 
- #include <stdio.h>
+#include <stdio.h>
 
- #define MAX_ZAHLEN 100
- 
- int main()
- {
-     
-     
-     return 0;
- }
+#define MAX_ZAHLEN 100
+
+void tausche(int *zeiger1, int *zeiger2)
+{
+    int zahl1 = *zeiger1;
+    *zeiger1 = *zeiger2;
+    *zeiger2 = zahl1;
+}
+
+void printArray(int array[], int length)
+{
+    for (int i = 0; i < length; i++)
+    {
+        printf("%d ", array[i]);
+    }
+}
+
+int main()
+{
+    int zahlen[MAX_ZAHLEN];
+    int num_zahlen = 0;
+
+    printf("Wieviele Zahlen sollen sortiert werden? ");
+    while (scanf("%d", &num_zahlen) != 1 || num_zahlen <= 0 || num_zahlen > MAX_ZAHLEN)
+    {
+        while (getchar() != '\n')
+            ;
+        printf("Fehlerhafte Eingabe!\n");
+    }
+
+    for (int i = 0; i < num_zahlen; i++)
+    {
+        printf("\nGeben Sie die %d. Zahl ein: ", i + 1);
+        while (scanf("%d", &zahlen[i]) != 1)
+        {
+            while (getchar() != '\n')
+                ;
+            printf("Fehlerhafte Eingabe!\n");
+        }
+    }
+
+    printf("Vor der Sortierung: ");
+    printArray(zahlen, num_zahlen);
+    for (int i = 0; i < num_zahlen - 1; i++)
+    {
+        int minIndex = i;
+        for (int j = i; j < num_zahlen; j++)
+        {
+            if (zahlen[j] < zahlen[minIndex])
+                minIndex = j;
+        }
+        tausche(&zahlen[minIndex], &zahlen[i]);
+    }
+    printf("\nNach der Sortierung: ");
+    printArray(zahlen, num_zahlen);
+
+    return 0;
+}
