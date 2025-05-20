@@ -36,10 +36,55 @@
 
 int gibGanzeZahlEin(int min, int max);
 
+void gibStudiEin(int studiIndex, int anzahlFaecher, int noten[][MAX_FAECHER])
+{
+    for(int i = 0; i < anzahlFaecher; i++)
+    {
+        printf("%d. Studi, %d. Fach: ", studiIndex+1, i+1);
+        noten[studiIndex][i] = gibGanzeZahlEin(1, 5);
+    }
+}
+
+void gibNotenAus(int noten[][MAX_FAECHER], int anzahlFaecher, int anzahlStudis)
+{
+    for(int i = 0; i < anzahlStudis; i++)
+    {
+        float note = 0.0f;
+        printf("%d. Studi: ", i+1);
+        for(int j = 0; j < anzahlFaecher; j++)
+        {
+            printf(" %d ", noten[i][j]);
+            note += noten[i][j];
+        }
+        printf(" -> %.2f\n", note / anzahlFaecher);
+    }
+}
+
 int main()
 {   
-    // TODO
+    int noten[MAX_STUDIS][MAX_FAECHER];
+
+    printf("Wieviele Studis? (Max. %d) ", MAX_STUDIS);
+    int anzahlStudis = gibGanzeZahlEin(1, MAX_STUDIS);
+    printf("Wieviele Fächer? (Max. %d) ", MAX_FAECHER);
+    int anzahlFaecher = gibGanzeZahlEin(1, MAX_FAECHER);
     
+    for(int i = 0; i < anzahlStudis; i++)
+    {
+        gibStudiEin(i, anzahlFaecher, noten);
+    }
+
+    printf("Noten:\n");
+    gibNotenAus(noten, anzahlFaecher, anzahlStudis);
+
+#if 0
+    m[0][2] = 12;
+    // m + 2 * sizeof(int) = 12
+
+    m[2][3] = 42;
+    // m + 2 * sizeof(int)*MAX_FAECHER + 3 * sizeof(int)
+#endif
+
     return 0;
 }
 

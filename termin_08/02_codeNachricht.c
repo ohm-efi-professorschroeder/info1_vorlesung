@@ -38,10 +38,55 @@
 
 int gibZahlEin(int min, int max);
 
+void gibTextEin(char code[][MAX_SPALTEN], int zeilen, int spalten)
+{
+    printf("Gib einen Text ein (max. %d Zeichen): ", zeilen*spalten);
+
+    for(int i = 0; i < zeilen*spalten; i++)
+    {
+        code[i / spalten][i % spalten] = getchar();
+    }
+}
+
+void gibCodeAus(char code[][MAX_SPALTEN], int zeilen, int spalten)
+{
+    for(int i = 0; i < spalten; i++)
+    {
+        for(int j = 0; j < zeilen; j++)
+        {
+            putchar(code[j][i]);
+        }
+    }
+}
+
+void initialisiereArray(char code[][MAX_SPALTEN])
+{
+    for(int i = 0; i < MAX_ZEILEN; i++)
+    {
+        for(int j = 0; j < MAX_SPALTEN; j++)
+        {
+            code[i][j] = (char) (rand() % (127-97) + 97);
+        }
+    }
+}
+
 int main()
 {
-    // TODO
+    char code[MAX_ZEILEN][MAX_SPALTEN];
+
+    srand(time(NULL));
+    initialisiereArray(code);
     
+    printf("Zeilen? ");
+    int zeilen = gibZahlEin(1, MAX_ZEILEN);
+    printf("Spalten? ");
+    int spalten = gibZahlEin(1, MAX_SPALTEN);
+    
+    gibTextEin(code, zeilen, spalten);
+
+    printf("Das ist der Code: \n");
+    gibCodeAus(code, zeilen, spalten);
+
     return 0;
 }
 
