@@ -9,10 +9,17 @@
  ***************************************************************************************************************/
 
 #include <stdio.h>
-// TODO
+#include "konstanten.h"
 
 int main()
 {
-    // TODO
+    float preis = 0;
+
+    printf("Bitte gib einen Nettopreis ein: ");
+    scanf("%f", &preis);
+
+    float bruttoPreis = preis * MWST;
+    printf("Der Bruttopreis bei einer MWST von %.2f ist:\n %.2f Euro.\n", MWST, bruttoPreis);
+
     return 0;
 }

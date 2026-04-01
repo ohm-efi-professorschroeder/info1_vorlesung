@@ -35,5 +35,19 @@
 
 int main()
 {
-    // TODO
+    int zahl1 = 0;
+    printf("Geben Sie eine dreistellige, ganze und positive Zahl ein: ");
+    scanf("%d", &zahl1);
+    getchar(); // Puffer bereinigen
+    printf("Es wurde eine dreistellige, positive Zahl eingegeben: %d\n", zahl1 > 99 && zahl1 < 1000);
+
+    printf("Geben Sie eine weitere dreistellige, ganze und positive Zahl ein: ");
+    char stelle1 = getchar();
+    char stelle2 = getchar();
+    char stelle3 = getchar();
+    getchar(); // Puffer bereinigen
+
+    printf("Die zweite Zahl ist: %d\n", (stelle1 - '0') * 100 + (stelle2 - '0') * 10 + stelle3 - '0');
+
+    return 0;
 }
