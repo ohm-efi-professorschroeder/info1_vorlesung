@@ -36,7 +36,35 @@
 
 int main()
 {
-    // TODO
+    unsigned int x = 42;
+    unsigned int y = 56;
+    char operator = '*';
+    double ergebnis = 0.0;
+    // TODO Eingabe implementieren
+
+    switch(operator) {
+        case '+':
+            ergebnis = x + y;
+            break;
+        case '-':
+            ergebnis = x - y;
+            break;
+        case '*':
+            ergebnis = x * y;
+            break;
+        case '/':
+            ergebnis = (double)x / y;
+            break;
+        default:
+            printf("Fehlerhafter Operator!\n");
+            ergebnis = 0.0;
+    }
+
+    printf("Ergebnis = %lf\n", ergebnis);
+
+
+    int ergebnisNegativ = ergebnis < 0 ? 1 : 0; 
+
     
     return 0;
 }
