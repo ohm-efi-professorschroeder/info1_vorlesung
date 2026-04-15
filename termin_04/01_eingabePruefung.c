@@ -22,7 +22,29 @@
 
 int main()
 {
-    // TODO
+    float preis = 0.0;
+
+    printf("Geben Sie einen Preis in Euro ein: ");
+
+    int eingelesen = scanf("%f", &preis);
+    while (eingelesen != 1 || preis < 0)
+    {
+        while(getchar() != '\n'); // Eingabepuffer leeren!
+        printf("Ungueltige Eingabe, bitte wiederholen!\n");
+        eingelesen = scanf("%f", &preis);
+    }
+
+    // Alternative:
+    // do {
+    //     eingelesen = scanf("%f", &preis);
+    //     if(eingelesen != 1 || preis < 0)
+    //         printf("Ungueltige Eingabe, bitte wiederholen!\n");
+    //     while(getchar() != '\n');
+    // } while(eingelesen != 1 || preis < 0);
+    
+    int euro = (int)preis;
+    int cents = ((preis - euro) * 100) + 0.001;
+    printf("Der Preis ist %d Euro und %d Cents.\n", euro, cents);
 
     return 0;
 }

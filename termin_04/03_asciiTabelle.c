@@ -25,7 +25,17 @@
 
 int main()
 {
-    // TODO
+    // TODO: Eingabe implementieren!
+    char start = 'c';
+    char end = 'C';
     
+    printf("Die Zeichen der ASCII-Tabelle von '%c' bis '%c' sind: ", start, end);
+    for(char c = start; c != end; c = (c + 1) % 127) {
+        if(!iscntrl(c))
+            putchar(c);
+    }
+
+    putchar('\n');
+
     return 0;
 }

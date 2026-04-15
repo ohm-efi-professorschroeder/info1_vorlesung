@@ -31,7 +31,25 @@
 
 int main()
 {
-    // TODO
+    int zahl = 0;
+    printf("Bitte positive ganze Zahl eingeben: ");
+    int eingelesen = scanf("%d", &zahl);
+    while (eingelesen != 1 || zahl < 0)
+    {
+        while(getchar() != '\n'); // Eingabepuffer leeren!
+        printf("Ungueltige Eingabe, bitte wiederholen!\n");
+        eingelesen = scanf("%d", &zahl);
+    }
 
+    // while(zahl >= 2) {
+    //     printf("%d / 2 = %d, Rest: %d\n", zahl, zahl / 2, zahl % 2);
+    //     zahl /= 2;
+    // }
+
+    for(int i = 31; i >= 0; i--){
+        printf("%d", zahl >> i & 1);
+    }
+    printf("\n");
+    
     return 0;
 }
