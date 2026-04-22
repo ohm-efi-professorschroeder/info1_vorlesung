@@ -27,12 +27,69 @@
  ***********************************************************************************************************************************************/
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-// TODO
+#define MIN(a,b) ((a) < (b) ? (a) : (b))
+#define MAX(a,b) ((a) > (b) ? (a) : (b))
+
+int wuerfeln()
+{
+    int wuerfelZahl = rand() % 6 + 1;
+
+    return wuerfelZahl;
+}
+
+
+int punkteBerechnen(int zahl1, int zahl2)
+{
+    int ergebnis = 0;
+
+    ergebnis = MAX(zahl1, zahl2) * 10 + MIN(zahl1, zahl2);
+
+    if(zahl1 == zahl2)
+        ergebnis *= 10;
+
+    if(ergebnis == 21)
+        ergebnis *= 100;
+
+    return ergebnis;
+}
+
+// Der Computer wuerfelt 3 und 5. 
+void ausgabe(int spieler, int zahl1, int zahl2, int ergebnis)
+{
+    if(spieler == 0)
+        printf("Der Computer würfelt: %d und %d --> %d\n", zahl1, zahl2, ergebnis);
+    else
+        printf("Der Spieler würfelt: %d und %d --> %d\n", zahl1, zahl2, ergebnis);
+
+}
 
 int main()
 {
-    // TODO
+    srand(time(0));
+
+    int spieler = 0;
+    int ergebnis = 0;
+    int neuesErgebnis = 0;
+
+    do 
+    {
+        ergebnis = neuesErgebnis;
+
+        int zahl1 = wuerfeln();
+        int zahl2 = wuerfeln();
+        neuesErgebnis = punkteBerechnen(zahl1, zahl2);
+        ausgabe(spieler, zahl1, zahl2, neuesErgebnis);
+
+        spieler = (spieler + 1) % 2;
+    } while (neuesErgebnis > ergebnis);
+
+    if(spieler == 0)
+        printf("Der Computer gewinnt!\n");
+    else
+        printf("Der Spieler gewinnt!\n");
 
     return 0;
 }

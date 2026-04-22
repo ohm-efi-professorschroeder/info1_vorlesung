@@ -17,9 +17,23 @@
 
 #include <stdio.h>
 
+int liesPositiveZahlEin() 
+{
+    int zahl = 0;
+    int eingelesen = 0;
+
+    do {
+        printf("Gib eine ganze, positive Zahl ein: ");
+        eingelesen = scanf("%d");
+        while(getchar() != '\n');
+    } while (eingelesen != 1 || zahl < 0);
+
+    return zahl;
+}
 
 int main()
 {
-    // TODO
+    int zahl = liesPositiveZahlEin();
+    
     return 0;
 }
