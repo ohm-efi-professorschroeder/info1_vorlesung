@@ -24,14 +24,14 @@ void mystery(int a, int b, int* c, int* d)
 
 int main()
 {
-    int a, b, c, d, e;
+    int a, b, c, d, e, f;
 
     printf("Geben Sie drei ganze Zahlen ein: ");
     scanf("%d, %d, %d", &a, &b, &c);
 
     mystery(a, b, &d, &e);
-    mystery(b, c, &d, &e);
-    mystery(a, c, &d, &e);
+    mystery(d, c, &d, &f);
+    mystery(e, c, &f, &e);
 
     printf("Die Ausgabe ist %d, %d.\n", d, e);
 
