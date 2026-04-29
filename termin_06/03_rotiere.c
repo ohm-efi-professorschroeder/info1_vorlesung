@@ -29,10 +29,16 @@
 #include <stdio.h>
 
 // TODO
+void tausche(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
 int main() 
 {
-    int a, b, c, d, n = 0;
+    int a, b, c, d, n = 10;
 
     printf("Geben Sie vier ganze Zahlen ein (getrennt durch Kommata): ");
     if (scanf("%d, %d, %d, %d", &a, &b, &c, &d) != 4)
@@ -42,6 +48,13 @@ int main()
     }
 
     // TODO
+    for(int i = 0; i < n; i++)
+    {
+        tausche(&a, &d);
+        tausche(&a, &b);
+        tausche(&b, &c);
+        printf("Nach der %d. Rotation: %d, %d, %d, %d\n", i+1, a, b, c, d);
+    }
                                                                  
     return 0;
 }

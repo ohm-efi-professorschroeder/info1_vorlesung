@@ -20,9 +20,36 @@
 
 // TODO
 
+int liesZahlEin()
+{
+    int zahl = 0;
+    int eingelesen = scanf("%d", &zahl);
+    while (eingelesen != 1)
+    {
+        while(getchar() != '\n'); // Eingabepuffer leeren!
+        printf("Ungueltige Eingabe, bitte wiederholen!\n");
+        eingelesen = scanf("%d", &zahl);
+    }
+    return zahl;
+}
+
+void divisionMitRest(int a, int b, int* ergebnis, int* rest)
+{
+    *ergebnis = a / b;
+    *rest = a % b;
+}
+
 int main()
 {
-    // TODO
 
+    printf("Gib zahl 1 ein: ");
+    int zahl1 = liesZahlEin();
+    printf("Gib zahl 2 ein: ");
+    int zahl2 = liesZahlEin();
+
+    int ergebnis, rest;
+    divisionMitRest(zahl1, zahl2, &ergebnis, &rest);
+
+    printf("Ergebnis: %d, Rest: %d\n", ergebnis, rest);
     return 0;
 }

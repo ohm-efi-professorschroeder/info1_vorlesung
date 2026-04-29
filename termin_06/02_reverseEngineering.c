@@ -10,30 +10,30 @@
 
 #include <stdio.h>
 
-void mystery(int a, int b, int* c, int* d)
+void minmax(int a, int b, int* min, int* max)
 {
     if(a > b) {
-        *d = a;
-        *c = b;
+        *max = a;
+        *min = b;
     }
     else {
-        *d = b;
-        *c = a;
+        *max = b;
+        *min = a;
     }
 }
 
 int main()
 {
-    int a, b, c, d, e, f;
+    int a, b, c, min, max, f;
 
     printf("Geben Sie drei ganze Zahlen ein: ");
     scanf("%d, %d, %d", &a, &b, &c);
 
-    mystery(a, b, &d, &e);
-    mystery(d, c, &d, &f);
-    mystery(e, c, &f, &e);
+    minmax(a, b, &min, &max);
+    minmax(min, c, &min, &f);
+    minmax(max, c, &f, &max);
 
-    printf("Die Ausgabe ist %d, %d.\n", d, e);
+    printf("Die Ausgabe ist %d, %d.\n", min, max);
 
     return 0;
 }
