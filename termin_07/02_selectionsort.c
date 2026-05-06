@@ -34,9 +34,74 @@
 
  #define MAX_ZAHLEN 100
  
- int main()
- {
-     
-     
-     return 0;
+int liesZahlEin(int min, int max) 
+{
+    int zahl = 0;
+    int eingelesen = 0;
+
+    int eingabeFalsch = 0;
+    do {
+        eingelesen = scanf("%d", &zahl);
+        while(getchar() != '\n');
+        eingabeFalsch = eingelesen != 1 || zahl < min || zahl > max;
+        if(eingabeFalsch)
+            printf("Zahl muss zwischen %d und %d sein: ", min, max);
+    } while (eingabeFalsch);
+
+    return zahl;
+}
+
+// TODO
+void printArray(int array[], int len)
+{
+    for(int i = 0; i < len; i++) {
+        printf("%d ", array[i]);
+    }
+}
+
+void tausche(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void selectionSort(int array[], int len)
+{
+    for(int i = 0; i < len; i++) {
+        int minIndex = i;
+        for(int j = i; j < len; j++) {
+            if(array[j] < array[minIndex])
+                minIndex = j;
+        }
+        tausche(&array[minIndex], &array[i]);
+    }
+}
+
+int main()
+{
+    int array[MAX_ZAHLEN];
+
+    // printf("Wieviele Zahlen willst du eingeben? ");
+    // int numZahlen = liesZahlEin(1, MAX_ZAHLEN);
+
+    // for(int i = 0; i < numZahlen; i++) {
+    //     printf("Gib die %d. Zahl ein: ", i+1);
+    //     array[i] = liesZahlEin(-99999, 99999);
+    // }
+    int numZahlen = 4;
+    array[0] = 2;
+    array[1] = 8;
+    array[2] = 0;
+    array[3] = 1;
+    
+
+    printf("Unsortiert: ");
+    printArray(array, numZahlen);
+    
+    selectionSort(array, numZahlen);
+    printf("\nSortiert: ");
+    printArray(array, numZahlen);
+    
+    return 0;
  }
