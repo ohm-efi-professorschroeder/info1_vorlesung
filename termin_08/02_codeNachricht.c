@@ -38,10 +38,57 @@
 
 int gibZahlEin(int min, int max);
 
+void textEingabe(char array[][MAX_SPALTEN], int anzahlZeilen, int anzahlSpalten)
+{
+    printf("Geben Sie Ihren Text ein (max. %d Zeichen): ", anzahlZeilen*anzahlSpalten);
+    
+    char zeichen = 0;
+    // int i = 0, j = 0;
+    // do {
+    //     zeichen = getchar();
+    //     if(zeichen != '\n')
+    //         array[i][j] = zeichen;
+    //     if(j < anzahlSpalten)
+    //         j++;
+    //     else {
+    //         i++;
+    //         j=0;
+    //     }
+    // } while(zeichen != '\n' && i < anzahlZeilen && j < anzahlSpalten)
+    
+    int i = 0;
+    do {
+        zeichen = getchar();
+        if(zeichen != '\n')
+            *(array[0] + i) = zeichen;
+        i++;
+    } while(zeichen != '\n' && i < anzahlZeilen * anzahlSpalten);
+
+    for(int rest = i; rest < anzahlZeilen * anzahlSpalten; rest++) {
+        *(&(array[0][0]) + rest) = (rand() % ('~'-'!'))+'!';
+    }
+}
+
+void codeAusgabe(char array[][MAX_SPALTEN], int anzahlZeilen, int anzahlSpalten)
+{        
+    for(int j = 0; j < anzahlSpalten; j++) {
+        for(int i = 0; i < anzahlZeilen; i++) {
+            putchar(array[i][j]);
+        }
+    }
+}
+
 int main()
 {
-    // TODO
-    
+    srand(time(0));
+    char text[MAX_ZEILEN][MAX_SPALTEN];
+    printf("Anzahl Zeilen: ");
+    int anzahlZeilen = gibZahlEin(1, MAX_ZEILEN);
+    printf("Anzahl Spalten: ");
+    int anzahlSpalten = gibZahlEin(1, MAX_SPALTEN);
+
+    textEingabe(text, anzahlZeilen, anzahlSpalten);
+    codeAusgabe(text, anzahlZeilen, anzahlSpalten);
     return 0;
 }
 
