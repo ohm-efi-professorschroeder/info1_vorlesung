@@ -27,21 +27,21 @@ void gibArrayAus(int array[], int anzahl);
 
 int main()
 {
-    int zahlen[MAX_ZAHLEN];
+    int zahlen[MAX_ZAHLEN] = {1,2,3,4,5};
     int suchZahl, anzahl;
     int *suchErg;
 
-    printf("Wie viele Zahlen (max. %d)? ", MAX_ZAHLEN);
-    anzahl = gibMinMaxZahlEin(1, MAX_ZAHLEN);
+    //printf("Wie viele Zahlen (max. %d)? ", MAX_ZAHLEN);
+    anzahl = 5;// gibMinMaxZahlEin(1, MAX_ZAHLEN);
 
-    printf("Geben Sie %d Zahlen in aufsteigender Reihenfolge ein:\n", anzahl);
-    gibArrayEin(zahlen, anzahl);
+    //printf("Geben Sie %d Zahlen in aufsteigender Reihenfolge ein:\n", anzahl);
+    //gibArrayEin(zahlen, anzahl);
 
     printf("\nDie Daten liegen folgendermassen im Speicher:\n");
     gibArrayAus(zahlen, anzahl);
 
     printf("Welche Zahl soll gesucht werden? ");
-    suchZahl = gibZahlEin();
+    suchZahl = 6; //gibZahlEin();
 
     suchErg = binsuche(suchZahl, zahlen, anzahl);
 

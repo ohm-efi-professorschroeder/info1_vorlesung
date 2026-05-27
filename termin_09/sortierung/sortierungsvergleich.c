@@ -31,6 +31,11 @@ void gibArrayAus(int array[], int anzahl)
     printf("\n");
 }
 
+int compare(const void* p1, const void* p2)
+{
+    return *(int*)p1 - *(int*)p2;
+}
+
 int main()
 {
     int zufallszahlen[ANZAHL];
@@ -42,7 +47,10 @@ int main()
         gibArrayAus(zufallszahlen, ANZAHL);
 
     starteUhr();
-    selectionsort(zufallszahlen, ANZAHL);
+    //selectionsort(zufallszahlen, ANZAHL);
+    //bubblesort(zufallszahlen, ANZAHL);
+    //insertionsort(zufallszahlen, ANZAHL);
+    qsort(zufallszahlen, ANZAHL, sizeof(int), compare);
 
     printf("Zahlen sortiert nach %lf Sekunden.\n", messeZeitInSek());
 

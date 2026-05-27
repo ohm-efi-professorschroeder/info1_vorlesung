@@ -5,7 +5,17 @@
 
 int *binsucheZgr(int suchElem, int *startZgr, int *endZgr)
 {
-    // TODO
+    while(startZgr <= endZgr) {
+        int *mitte = startZgr + (endZgr - startZgr) / 2;
+
+        if (*mitte == suchElem)
+            return mitte;
+        else if (suchElem < *mitte)
+            endZgr = mitte-1;
+        else 
+            startZgr = mitte+1;
+    }
+    return NULL;
 }
 
 int *binsuche(int suchElem, int array[], int anzahl)

@@ -93,9 +93,9 @@ CFLAGS = -Wall -g -O0
 UTILS_SRC = termin_09/utils/stoppuhr.c termin_09/utils/zahlenEingabe.c termin_09/utils/zufallsarray.c
 09_01-sortierungTest: termin_09/sortierung/sortierung.c termin_09/sortierung/sortierungTest.c $(UTILS_SRC)
 	$(CC) $(CFLAGS) $^ -o $(BUILD_DIR)/$@
-09_01-sortierungVergleich: termin_09/sortierung/sortierung.c termin_09/sortierung/sortierungVergleich.c $(UTILS_SRC)
+09_01-sortierungVergleich: termin_09/sortierung/sortierung.c termin_09/sortierung/sortierungsvergleich.c $(UTILS_SRC)
 	$(CC) $(CFLAGS) $^ -o $(BUILD_DIR)/$@
-09_01-suche: termin_09/sortierung/suche.c termin_09/sortierung/sucheTest.c $(UTILS_SRC)
+09_01-suche: termin_09/suche/suche.c termin_09/suche/sucheTest.c $(UTILS_SRC)
 	$(CC) $(CFLAGS) $^ -o $(BUILD_DIR)/$@
 
 clean:
